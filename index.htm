@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+    <head>
+        <title>The Soccer Shop</title>
+         
+           <style>
+
+           </style>
+
+
+           <script>
+             
+            price1 = 220,wpr1=190
+            price2 = 220,wpr2=190
+            price3 = 220,wpr3=190
+                 
+             
+             function calc_price(){
+              document.getElementById("price1").innerHTML = "price:    $" + price1
+              document.getElementById("price2").innerHTML = "price:    $" + price2
+              document.getElementById("price3").innerHTML = "price:    $" + price3
+            
+           
+
+             }
+             
+             function  ProcessOrder(){
+             var output=document.getElementById("output");
+             var q1 = parseFloat(document.getElementById("q1").value);   
+             var q2 = parseFloat(document.getElementById("q2").value);
+             var q3 = parseFloat(document.getElementById("q3").value);
+             var buyerTotal = (price1*q1) + (price2*q2) + (price3*q3);
+             var comSubtotal = (wpr1*q1) + (wpr2*q2) + (wpr3*q3);
+             var tax = 0.0875*buyerTotal;
+             var shipping = 0;
+             if(buyerTotal<=400 && buyerTotal>=250){
+                 shipping = 5;
+
+             }else if (buyerTotal<=250 && buyerTotal>=190){
+                 shipping = 10;
+
+             }
+             
+             var total = buyerTotal + tax + shipping;
+
+
+
+
+             var build = "";
+             build+= "Checkout" + "<br>";
+             build+= "Subtotal          $" + buyerTotal + "<br>";
+             build+= "tax     $" + tax.toFixed(2) + "<br>";
+             build+= " Order Total        $" + total.toFixed(2) + "<br>";
+             build+= "The Soccer Shop Transaction info" + "<br>";
+             build+= "Buyer Total Cost " + buyerTotal;
+             build+= "Company Total Cost" + comSubtotal;
+             
+             
+             output.innerHTML=build;
+
+
+            
+             }
+            
+
+
+
+
+             
+             
+
+             
+             
+             
+
+
+
+
+
+           </script>
+    </head>
+    <body>
+        <h1>The Soccer Shop</h1>
+       
+
+        <img src="soccershoe.jpeg" style = width:200px >
+        <p>Mercurial Vapor 11 Neymar Edition</p><br>
+        price 190</br>
+        <input type="text" id="q1" placeholder="Enter the quantity" value=0>
+        
+       <br>
+       
+       
+
+       <img src = "soccershoe2.jpeg" style= width:200px>
+        <p>Mercurial Vapor 11 Neymar Edition</p><br>
+        price 190</br>
+        <input type = "text" id="q2" placeholder="enter the quantitiy" value=0>
+        <br>
+     
+       
+
+
+        <img src = "soccershoe3.jpeg" style = width:200px>
+        <p> Mercurial Vapor 11</p><br>
+        price 190</br>
+       <input type = "text" id="q3" placeholder="enter the quantitiy" value=0> 
+        
+       
+        <br>
+        
+        
+        
+        </div>
+        <div id="output"></div>      
+        <div id="button">
+            <button onclick="ProcessOrder()">click to get ProcessOrder</button>
+        </div>
+        </div>
+        
+
+
+
+        
+
+
+
+
+    </body>
