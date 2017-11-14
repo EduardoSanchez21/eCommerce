@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <title>The Soccer Shop</title>
+         
+           <style>
+
+           </style>
+
+
+           <script>
+             function initial_price(){
+                 price1 = 220,wpr1=190
+                 price2 = 220,wpr2=190
+                 price3 = 220,wpr3=190
+                 
+             }
+             function calc_price(){
+              document.getElementById("price1").innerHTML = "price:    $" + price1
+              document.getElementById("price2").innerHTML = "price:    $" + price2
+              document.getElementById("price3").innerHTML = "price:    $" + price3
+              var op= document.getElementById("output");
+             
+           
+
+             }
+             
+             function  ProcessOrder(){
+             var output=document.getElementById("output");
+             var q1 = pareseFloat(document.getElementById("q1").value);   
+             var q2 = pareseFloat(document.getElementById("q2").value);
+             var q3 = pareseFloat(document.getElementById("q3").value);
+             var buyerTotal = (price1*q1) + (price2*q2) + (price3*q3);
+             var comSubtotal = (wpr1*q1) + (wpr2*q2) + (wpr3*q3);
+             var tax = 0.0875;
+             var shipping = 0;
+             var tax = parseFloat();
+             if(buyerTotal<=400 && buyerTotal>=250){
+                 shipping = 5;
+
+             }else if (buyerTotal<=250 && buyerTotal>=190){
+                 shipping = 10;
+
+             }
+             
+             var total = buyerTotal + tax + shipping;
+
+
+
+
+             var build = "";
+             build+= "Checkout" + "<br>";
+             build+= "Subtotal          $" + buyerTotal + "<br>";
+             build+= "tax     $" + tax.toFixed(2) + "<br>";
+             build+= " Order Total        $" + total.tofixed(2) + "<br>";
+             build+= "The Soccer Shop Transaction info" + "<br>";
+             build+= "Buyer Total Cost " + buyerTotal;
+             build+= "Company Total Cost" + comSubtotal;
+             
+             
+             output.innerHTML=build;
+
+
+            
+             }
+            
+
+
+
+
+             
+             
+
+             
+             
+             
+
+
+
+
+
+           </script>
+    </head>
+    <body>
+        <h1>The Soccer Shop</h1>
+       
+
+        <img src="soccershoe.jpeg" style = width:200px >
+        <p> <font size = "6"><font face = "arial black"><b>Mercurial Vapor 11</p><br>
+        price 190</br>
+     
+        <input type="text" id="q1,q2,q3" placeholder="Enter the quantity">
+        
+       <br>
+       <div id="output"></div>
+       
+
+       <img src = "soccershoe2.jpeg" style= width:200px>
+        <p>Mercurial Vapor 11 Neymar Edition</p><br>
+        price 190</br>
+        <input type = "text" id="q1,q2,q3" placeholder="enter the quantitiy">
+     
+        <p> <font size = "6"><font face = "arial black"><b></p>
+
+
+        <img src = "soccershoe3.jpeg" style = width:200px>
+        <p> Mercurial Vapor 11</p><br>
+        price 190</br>
+        
+        
+        
+        <input type = "text" id="q1,q2,q3" placeholder="enter the quantitiy">
+        
+        <p> <font size = "6"><font face = "arial black"><b></p>
+        <br>
+        
+        
+        
+        </div>
+        <div id="ProcessOrder"></div>      
+        <div id="button4">
+            <button onclick="Total();">
+                click to get Total
+            </button>
+        </div>
+        </div>
+        
+
+
+
+        
+
+
+
+
+    </body>
